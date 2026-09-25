@@ -1,0 +1,70 @@
+student deattails using parametrierized,non perametarameterized and copy constructor
+#include <iostream>
+#include <string>
+using namespace std;
+class student {
+string name;
+char division;
+string batch;
+int ro_no;
+unsigned long long prn;
+public:
+// Non-parameterized constructor
+student() {
+cout << "object is created by non-parameterized constructor" << endl;
+name =
+"z";
+division =
+'A';
+batch =
+"A1";
+ro_no = 0;
+prn = 0;
+}
+// Parameterized constructor
+student(string c, char d, string e, int a, unsigned long long b) {
+cout << "parameterized constructor" << endl; name = c;
+division = d;
+batch = e;
+ro_no = a;
+prn = b;
+}
+// Copy constructor
+student(const student &s) {
+cout << "copy constructor" << endl;
+name = s.name;
+division = s.division;
+batch = s.batch;
+ro_no = s.ro_no;
+prn = s.prn;
+}
+void display() {
+cout << "name=
+" << name << endl;
+cout << "division=
+" << division << endl;
+cout << "batch=
+" << batch << endl;
+cout << "ro.no=
+" << ro_no << endl;
+cout << "prn=
+" << prn << endl;
+cout << endl;
+}
+~student() {
+cout << "object destructed" << endl;
+} };
+int main() {
+student s1;
+s1.display();
+student s2("Sandhya Datta Jagtap"
+,
+'C'
+,
+"C4"
+, 21, 202602070021);
+s2.display();
+student s3 = s2;
+s3.display();
+return 0;
+}
